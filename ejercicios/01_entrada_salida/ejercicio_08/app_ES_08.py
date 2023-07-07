@@ -41,7 +41,10 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        operadorA = self.txt_operador_a.get()
+        operadorB = self.txt_operador_b.get()
+        division = float(operadorA) % float(operadorB)
+        alert("Resultado", "La Division entre " + operadorA +" y " + operadorB + " es: " +str(division))
         
         
     

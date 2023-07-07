@@ -40,7 +40,12 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+         operadorA = self.txt_sueldo.get()
+         operadorB = self.txt_incremento.get()
+         porcentaje = int(operadorA) * int(operadorB)
+         resultado = porcentaje // 100
+         incremento = resultado + int(operadorA)
+         alert("Incremento", "El sueldo actualizado es de " + str(incremento) + "$")
         
     
 if __name__ == "__main__":
