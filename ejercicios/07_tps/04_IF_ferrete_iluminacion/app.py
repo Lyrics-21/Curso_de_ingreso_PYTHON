@@ -38,48 +38,74 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        marca = self.combobox_marca.get()
-        cantidad = self.combobox_cantidad.get()
-        precio = 800 * int(cantidad)
-        lampara = 800
-        descuento = None
+         marca = self.combobox_marca.get()
+         cantidad = self.combobox_cantidad.get()
+         precio = 800 * int(cantidad)
+         descuento = None
 
-        if int(cantidad) >=6 and int(cantidad) <11:
-            alert("Precio","El precio final de las lamparas es de " + str(precio / 2)+ "$")
-        else:
-              if int(cantidad)>=11:
-               alert("Precio","El precio final de las lamparas es de " + str(precio - (((precio / 2) * 15) / 100))+ "$")
+        # if int(cantidad) >=6 and int(cantidad) <11:
+        #     alert("Precio","El precio final de las lamparas es de " + str(precio / 2)+ "$")
+        # else:
+        #       if int(cantidad)>=11:
+        #        alert("Precio","El precio final de las lamparas es de " + str(precio - (((precio / 2) * 15) / 100))+ "$")
             
-        if int(cantidad) == 5:
-               if marca == "ArgentinaLuz":
-                descuento = 0.40
-               else:
-                   descuento = 0.30
-        else:
-            if int(cantidad) == 4:
-                if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
-                    descuento = 0.25
-                else:
-                    descuento = 0.20
-            else:
-                if int(cantidad) == 3:
-                     if marca == "ArgentinaLuz":
-                         descuento = 0.15
-                     else:
-                         if marca == "FelipeLamparas":
-                             descuento = 0.10
-                         else:
-                             descuento = 0.5
-                else:
-                    if int(cantidad) <=2:
-                     descuento = 0
+        # if int(cantidad) == 5:
+        #        if marca == "ArgentinaLuz":
+        #         descuento = 0.40
+        #        else:
+        #            descuento = 0.30
+        # else:
+        #     if int(cantidad) == 4:
+        #         if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
+        #             descuento = 0.25
+        #         else:
+        #             descuento = 0.20
+        #     else:
+        #         if int(cantidad) == 3:
+        #              if marca == "ArgentinaLuz":
+        #                  descuento = 0.15
+        #              else:
+        #                  if marca == "FelipeLamparas":
+        #                      descuento = 0.10
+        #                  else:
+        #                      descuento = 0.5
+        #         else:
+        #             if int(cantidad) <=2:
+        #              descuento = 0
                         
-        Precio_final = precio - (precio * descuento)
-        alert("Precio","El precio final de las lamparas es de " + str(Precio_final) + "$")
-                        
-                             
+        # Precio_final = precio - (precio * descuento)
+        # alert("Precio","El precio final de las lamparas es de " + str(Precio_final) + "$")
 
+         if int(cantidad) >=6:
+             descuento = 0.50
 
+         elif int(cantidad) == 5:
+             if marca == "ArgentinaLuz":
+              descuento = 0.40
+             else:
+                 descuento = 0.30
+         elif int(cantidad) == 4:
+             if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
+                 descuento = 0.25
+             else:
+                 descuento = 0.20
+         elif int(cantidad) == 3:
+             if marca == "ArgentinaLuz":
+                 descuento = 0.15
+             else:
+                 if marca == "FelipeLamparas":
+                     descuento = 0.10
+                 else:
+                     descuento = 0.5
+         else:
+             descuento = 0
+
+         precio_final = precio - (precio * descuento)
+         if precio_final > 4000:
+             precio_final = precio - (precio * 0.05)  
+
+         alert("Precio","El precio final de las lamparas es de " + str(precio_final) + "$")
+             
                            
 if __name__ == "__main__":
     app = App()
