@@ -38,9 +38,65 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
-        
-    
+        marca = self.combobox_marca.get()
+        cantidad = self.combobox_cantidad.get()
+        precio = 800 * int(cantidad)
+        lampara = 800
+
+        if int(cantidad) >=6 and int(cantidad) <11:
+            alert("Precio","El precio final de las lamparas es de " + str(precio / 2)+ "$")
+        else:
+              if int(cantidad)>=11:
+               alert("Precio","El precio final de las lamparas es de " + str(precio - (((precio / 2) * 15) / 100))+ "$")
+               
+
+        if marca == "ArgentinaLuz":
+            if int(cantidad) == 5:
+               alert("Precio","El precio final de las lamparas es de " + str(precio - ((precio * 40)/ 100)) + "$")
+            else:
+               if int(cantidad) == 4:
+                  alert("Precio","El precio final de las lamparas es de " + str(precio - ((precio * 25)/ 100))+ "$")
+               else:
+                  if int(cantidad) == 3:
+                     alert("Precio","El precio final de las lamparas es de " + str(precio - ((precio * 15)/ 100))+ "$")
+                  else:
+                     if int(cantidad) == 2:
+                      alert("Precio","El precio final de las lamparas es de " + str(lampara * 2)+ "$")
+                     else:
+                        if int(cantidad) == 1:
+                         alert("Precio","El precio final de las lamparas es de " + str(lampara) + "$")
+        else:
+           if marca == "FelipeLamparas":
+              if int(cantidad) == 5:
+                 alert("Precio","El precio final de las lamparas es de " + str(precio - ((precio * 30)/ 100)) + "$")
+              else:
+                 if int(cantidad) == 4:
+                    alert("Precio","El precio final de las lamparas es de " + str(precio - ((precio * 25)/ 100))+ "$")
+                 else:
+                    if int(cantidad) == 3:
+                       alert("Precio","El precio final de las lamparas es de " + str(precio - ((precio * 10)/ 100))+ "$")
+                    else:
+                       if int(cantidad) == 2:
+                          alert("Precio","El precio final de las lamparas es de " + str(lampara * 2)+ "$")
+                       else:
+                         if int(cantidad) == 1:
+                          alert("Precio","El precio final de las lamparas es de " + str(lampara) + "$") 
+           else:
+              if int(cantidad) == 5:
+                 alert("Precio","El precio final de las lamparas es de " + str(precio - ((precio * 30)/ 100)) + "$")
+              else:
+                 if int(cantidad) == 4:
+                    alert("Precio","El precio final de las lamparas es de " + str(precio - ((precio * 20)/ 100))+ "$")
+                 else:
+                    if int(cantidad) == 3:
+                       alert("Precio","El precio final de las lamparas es de " + str(precio - ((precio * 5)/ 100))+ "$")
+                    else:
+                       if int(cantidad) == 2:
+                          alert("Precio","El precio final de las lamparas es de " + str(lampara * 2)+ "$")
+                       else:
+                         if int(cantidad) == 1:
+                          alert("Precio","El precio final de las lamparas es de " + str(lampara) + "$")
+                           
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

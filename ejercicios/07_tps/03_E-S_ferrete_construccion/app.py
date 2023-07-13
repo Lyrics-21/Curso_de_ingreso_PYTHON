@@ -63,7 +63,10 @@ class App(customtkinter.CTk):
         self.btn_calcular.grid(row=3, pady=10, columnspan=2, sticky="nsew")
 
     def btn_calcular_on_click(self):
-        pass
+        largo = self.txt_largo.get()
+        ancho = self.txt_ancho.get()
+        metros_cuadrados = int(largo) * int(ancho)
+         
 
 
 if __name__ == "__main__":
