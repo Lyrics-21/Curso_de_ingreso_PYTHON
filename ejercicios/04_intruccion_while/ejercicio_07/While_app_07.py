@@ -32,7 +32,22 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        suma = 0
+        contador = 0
+        while (True):
+         numeros = prompt("Numeros","Ingrese varios numeros")
+         if (numeros == None):
+            break
+         contador =+ 1
+         numeros = int(numeros)
+         suma = suma + numeros
+          
+
+        promedio = suma / contador
+        suma = str(suma)
+        promedio = str(promedio)
+        self.txt_suma_acumulada.insert (1,suma)
+        self.txt_promedio.insert (0, promedio)
 
     
 if __name__ == "__main__":

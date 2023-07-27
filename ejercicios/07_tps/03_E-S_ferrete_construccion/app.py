@@ -29,7 +29,7 @@ a la hora de realizar un alambrado permetral, se le solicita al usuario que ingr
     V                                   V
     F                                   F
     V                                   V
-    V                                   V
+    V                                   V   
     V                                   V
     V                                   V
     V                                   V
@@ -65,7 +65,33 @@ class App(customtkinter.CTk):
     def btn_calcular_on_click(self):
         largo = self.txt_largo.get()
         ancho = self.txt_ancho.get()
-        metros_cuadrados = int(largo) * int(ancho)
+        metros_cuadrados = (int(largo) * int(ancho)) / 1000
+        perimetro = (2 * (int(ancho) + int(largo)))
+
+        if int(largo) >=250 or int(ancho) >=250:
+            poste_grueso = perimetro // 250
+        else:
+            poste_grueso = 4
+
+        if int(largo) >=12 or int(ancho) >=12:
+            poste_fino = (perimetro // 12) - poste_grueso
+        else:
+            poste_fino = 0
+
+        if int(largo) >=2 or int(ancho) >=2:
+            varillas = perimetro // 2
+        else:
+            varillas = 0
+
+        mts_poste_grueso = poste_grueso * 2.4
+        mts_poste_fino = poste_fino * 2.2  
+
+        alambre = (((perimetro * 7) - (mts_poste_grueso + mts_poste_fino)))      
+
+        alert("Materiales", "Se necesitan\n" + str(poste_grueso)+ " Postes gruesos\n" + str(poste_fino) + " Postes finos\n" + str(varillas) + " Varillas\n" + str(alambre) + " Mts de Alambre\nY hay " + str(metros_cuadrados) + " Kmts cuadrados" )                                                            
+
+
+
          
 
 

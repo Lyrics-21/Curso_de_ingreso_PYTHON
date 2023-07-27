@@ -21,7 +21,12 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+            for _ in range(10):
+             valor = prompt("NUmero", "ingrese un valor")
+             valor = int(valor)
+             if valor == 9:
+                alert("god", f"valor ingresado correctamente {valor}")
+                break
         
     
 if __name__ == "__main__":

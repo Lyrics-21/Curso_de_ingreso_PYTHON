@@ -41,9 +41,29 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
 
+        for _ in range(10):
 
+            nombre = prompt("Datos","Ingrese su nombre")
+            while not nombre.isalpha():
+                nombre = prompt("Datos","Ingrese su nombre de nuevo")
+
+            edad = prompt("Datos","Ingrese su edad")
+            while not edad.isdigit() or int(edad) < 18:
+                edad = prompt("Datos","Ingrese su edad de nuevo")
+
+            genero = prompt("Datos","Ingrese su Genero (F-M-NB)")
+            while not genero.isalpha() or genero != "M" and genero != "F" and genero != "NB":
+                genero = prompt("Datos","Ingrese un genero valido (F-M-NB)")
+            
+            tecnologia = prompt("Datos","Ingrese la tecnologia a usar (PYTHON - JS - ASPN)")
+            while not tecnologia.isalpha() or tecnologia != "PYTHON" and tecnologia != "JS" and tecnologia != "ASPN":
+                tecnologia = prompt("Datos","Ingrese una tecnologia valida (PYTHON - JS - ASPN)")
+
+            puesto = prompt("Datos","Ingrese su puesto (Jr - Ssr - Sr)")
+            while not puesto.isalpha() or puesto != "Jr" and puesto != "Ssr" and puesto != "Sr":
+                puesto = prompt("Datos","Ingrese un puesto valido (Jr - Ssr - Sr)")
+           
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

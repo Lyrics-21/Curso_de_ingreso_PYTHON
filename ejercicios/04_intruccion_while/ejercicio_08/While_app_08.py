@@ -32,7 +32,27 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        suma = 0
+        prod = 0
+        while (True):
+            numeros = prompt("Numeros","Ingrese varios numeros")
+            while not numeros.isdigit():
+                numeros = prompt("Error","Ingrese numeros validos")
+
+            if (numeros == None or numeros == "0"):
+                break
+         
+        numeros = int(numeros)
+        if (numeros >= 0):
+          suma = suma + numeros
+        else:
+            prod = prod * numeros
+
+          
+        suma = str(suma)
+        prod = str(prod)
+        self.txt_suma_acumulada.insert (0,suma)
+        self.txt_producto.insert (0,prod)
 
     
 if __name__ == "__main__":

@@ -23,7 +23,9 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass 
+        numero = list(range(1,6))
+        for numero in numero:
+            alert("a","god" + str(numero)) 
        
             
 

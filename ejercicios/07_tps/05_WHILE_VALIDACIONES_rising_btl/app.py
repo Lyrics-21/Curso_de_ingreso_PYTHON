@@ -50,7 +50,27 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        apellido = prompt("Censo", "ingrese apellido")
+        while not apellido.isalpha():
+            apellido = prompt("Error", "ingrese su apellido de nuevo")
+
+        edad = prompt("Censo", "ingrese su edad")
+        while not edad.isdigit() or int(edad) <18 or int(edad) >90:
+            edad = prompt("Error", "ingrese de nuevo su edad")
+
+        legajo = prompt("Censo","Ingrese su legajo (4 digitos)")
+        while not legajo.isdigit() or int(legajo) < 1000 or int(legajo) >9999:
+            legajo = prompt("Error", "ingrese de nuevo su legajo")
+
+
+        self.txt_apellido.insert (0,apellido)
+        self.txt_edad.insert (0,edad)
+        self.txt_legajo.insert (0,legajo)
+
+
+
+
+
 
 
 if __name__ == "__main__":

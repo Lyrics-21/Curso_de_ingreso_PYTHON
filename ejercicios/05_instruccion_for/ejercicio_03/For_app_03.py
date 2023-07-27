@@ -29,11 +29,12 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
-
-        
-        
-    
+        cantidad_veces = self.txt_repetir.get()
+        cantidad_veces = int(cantidad_veces)
+        for _ in range(cantidad_veces):
+            alert("Mensaje", "Hola UTN FRA")
+            
+  
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

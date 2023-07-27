@@ -22,7 +22,11 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        numero = prompt("Numeros","Ingrese un numero")
+        numero = int(numero)
+        for lista in range(1,numero,2):
+            alert("Lista", f"los numros son {lista}")
+
         
     
 if __name__ == "__main__":

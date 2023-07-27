@@ -24,13 +24,18 @@ class App(customtkinter.CTk):
         self.btn_cargar.grid(row=3, pady=10, columnspan=2, sticky="nsew")
 
         self.lista_datos = []
-
+    
 
     def btn_mostrar_on_click(self):
-        pass
-        
+        print(self.lista_datos)
     def btn_cargar_on_click(self):
-        pass
+        self.lista_datos.clear 
+        for _ in range(3):
+         numero = prompt("Numeros","Ingrese un numero")
+         while numero == None or not numero.isdigit():
+            numero = prompt("Error","Ingrese un numero")
+         self.lista_datos.append(int(numero))
+
     
 if __name__ == "__main__":
     app = App()
